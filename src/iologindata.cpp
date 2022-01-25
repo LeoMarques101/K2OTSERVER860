@@ -28,6 +28,8 @@
 extern ConfigManager g_config;
 extern Game g_game;
 
+std::ostringstream query;
+
 Account IOLoginData::loadAccount(uint32_t accno)
 {
 	Account account;
@@ -495,6 +497,25 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		} while (result->next());
 	}
 
+	//load autoloot
+	query.str(std::string());
+	query << "SELECT `list` FROM `player_autoloot` WHERE `player_id` = " << player->getGUID();
+
+	if ((result = db.storeQuery(query.str()))) {
+		unsigned long lootlistSize;
+		const char* autolootlist = result->getStream("list", lootlistSize);
+		PropStream propStreamList;
+		propStreamList.init(autolootlist, lootlistSize);
+
+		int16_t value;
+		int16_t item = propStreamList.read<int16_t>(value);
+
+		while (item) {
+			player->addAutoLootItem(value);
+			item = propStreamList.read<int16_t>(value);
+		}
+	}
+
 	//load vip list
 	if ((result = db.storeQuery(fmt::format("SELECT `player_id` FROM `account_viplist` WHERE `account_id` = {:d}", player->getAccount())))) {
 		do {
@@ -595,7 +616,7 @@ bool IOLoginData::savePlayer(Player* player)
 	const char* conditions = propWriteStream.getStream(conditionsSize);
 
 	//First, an UPDATE query to write the player itself
-	std::ostringstream query;
+	//std::ostringstream query;
 	query << "UPDATE `players` SET ";
 	query << "`level` = " << player->level << ',';
 	query << "`group_id` = " << player->group->id << ',';
@@ -788,6 +809,38 @@ bool IOLoginData::savePlayer(Player* player)
 	if (!storageQuery.execute()) {
 		return false;
 	}
+
+	//save autolootlist
+	query.str(std::string());
+	query << "DELETE FROM `player_autoloot` WHERE `player_id` = " << player->getGUID();
+
+	if (!db.executeQuery(query.str())) {
+		return false;
+	}
+
+	if (player->autoLootList.size()) {
+		PropWriteStream propWriteStreamAutoLoot;
+
+		for (auto i : player->autoLootList) {
+			propWriteStreamAutoLoot.write<uint16_t>(i);
+		}
+
+		DBInsert autolootQuery("INSERT INTO `player_autoloot` (`player_id`, `list`) VALUES ");
+
+		size_t lootlistSize;
+		const char* autolootlist = propWriteStreamAutoLoot.getStream(lootlistSize);
+		query.str(std::string());
+		query << player->getGUID() << ',' << db.escapeBlob(autolootlist, lootlistSize);
+
+		if (!autolootQuery.addRow(query)) {
+			return false;
+		}
+
+		if (!autolootQuery.execute()) {
+			return false;
+		}
+	}
+
 
 	//End the transaction
 	return transaction.commit();

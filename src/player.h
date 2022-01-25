@@ -1020,6 +1020,10 @@ class Player final : public Creature, public Cylinder
 
 		void updateRegeneration();
 
+		void addAutoLootItem(uint16_t itemId);
+		void removeAutoLootItem(uint16_t itemId);
+		bool getAutoLootItem(uint16_t itemId);
+
 	private:
 		std::forward_list<Condition*> getMuteConditions() const;
 
@@ -1067,6 +1071,7 @@ class Player final : public Creature, public Cylinder
 		void internalAddThing(Thing* thing) override;
 		void internalAddThing(uint32_t index, Thing* thing) override;
 
+		std::set<uint32_t> autoLootList;
 		std::unordered_set<uint32_t> attackedSet;
 		std::unordered_set<uint32_t> VIPList;
 
