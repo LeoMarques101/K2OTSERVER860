@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `premium_ends_at` int unsigned NOT NULL DEFAULT '0',
   `email` varchar(255) NOT NULL DEFAULT '',
   `creation` int NOT NULL DEFAULT '0',
+  `vipdays` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
@@ -339,6 +340,32 @@ CREATE TABLE IF NOT EXISTS `player_storage` (
   `key` int unsigned NOT NULL DEFAULT '0',
   `value` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`player_id`,`key`),
+  FOREIGN KEY (`player_id`) REFERENCES `players`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE IF NOT EXISTS `player_autoloot` (
+  `player_id` int(11) NOT NULL,
+  `list` blob,
+  UNIQUE KEY `player_id` (`player_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `players_k2vocchange` (
+  `player_id` int(11) NOT NULL,
+  `vocation` int(11) NOT NULL DEFAULT '0',
+  `maglevel` int(11) NOT NULL DEFAULT '0',
+  `manaspent` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_fist` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_fist_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_club` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_club_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_sword` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_sword_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_axe` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_axe_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_dist` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_dist_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_shielding` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_shielding_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
   FOREIGN KEY (`player_id`) REFERENCES `players`(`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
 
