@@ -28,7 +28,7 @@
 extern ConfigManager g_config;
 extern Game g_game;
 
-std::ostringstream query;
+//std::ostringstream query;
 
 Account IOLoginData::loadAccount(uint32_t accno)
 {
@@ -498,10 +498,7 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 	}
 
 	//load autoloot
-	query.str(std::string());
-	query << "SELECT `list` FROM `player_autoloot` WHERE `player_id` = " << player->getGUID();
-
-	if ((result = db.storeQuery(query.str()))) {
+	if ((result = db.storeQuery(fmt::format("SELECT `list` FROM `player_autoloot` WHERE `player_id` = {:d}", player->getGUID())))) {
 		unsigned long lootlistSize;
 		const char* autolootlist = result->getStream("list", lootlistSize);
 		PropStream propStreamList;
@@ -616,7 +613,7 @@ bool IOLoginData::savePlayer(Player* player)
 	const char* conditions = propWriteStream.getStream(conditionsSize);
 
 	//First, an UPDATE query to write the player itself
-	//std::ostringstream query;
+	std::ostringstream query;
 	query << "UPDATE `players` SET ";
 	query << "`level` = " << player->level << ',';
 	query << "`group_id` = " << player->group->id << ',';
@@ -811,10 +808,8 @@ bool IOLoginData::savePlayer(Player* player)
 	}
 
 	//save autolootlist
-	query.str(std::string());
-	query << "DELETE FROM `player_autoloot` WHERE `player_id` = " << player->getGUID();
 
-	if (!db.executeQuery(query.str())) {
+	if (!db.executeQuery(fmt::format("DELETE FROM `player_autoloot` WHERE `player_id` = {:d}", player->getGUID()))) {
 		return false;
 	}
 
@@ -829,6 +824,7 @@ bool IOLoginData::savePlayer(Player* player)
 
 		size_t lootlistSize;
 		const char* autolootlist = propWriteStreamAutoLoot.getStream(lootlistSize);
+
 		query.str(std::string());
 		query << player->getGUID() << ',' << db.escapeBlob(autolootlist, lootlistSize);
 
