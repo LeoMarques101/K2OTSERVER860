@@ -33,7 +33,7 @@ extern Monsters g_monsters;
 extern Game g_game;
 extern Events* g_events;
 
-static constexpr int32_t MINSPAWN_INTERVAL = 10 * 1000; // 10 seconds to match RME
+static constexpr int32_t MINSPAWN_INTERVAL = 1000; // 10 seconds to match RME
 static constexpr int32_t MAXSPAWN_INTERVAL = 24 * 60 * 60 * 1000; // 1 day
 
 bool Spawns::loadFromXml(const std::string& filename)
@@ -287,7 +287,7 @@ bool Spawn::isInSpawnZone(const Position& pos)
 
 bool Spawn::spawnMonster(uint32_t spawnId, spawnBlock_t sb, bool startup/* = false*/)
 {
-	bool isBlocked = !startup && findPlayer(sb.pos);
+	bool isBlocked = false; //!startup && findPlayer(sb.pos);
 	size_t monstersCount = sb.mTypes.size(), blockedMonsters = 0;
 
 	const auto spawnFunc = [&](bool roll) {
