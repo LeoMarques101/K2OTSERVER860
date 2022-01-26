@@ -71,59 +71,59 @@
 		<npc name="K2 Guard_DIREITA" x="0" y="2" z="7" spawntime="60" direction="1" />
 	</spawn>
 	<spawn centerx="1140" centery="723" centerz="7" radius="10">
-		<monster name="Rotworm" x="3" y="-9" z="7" spawntime="10" />
-		<monster name="Rotworm" x="7" y="-9" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-8" y="-8" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-5" y="-8" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-2" y="-8" z="7" spawntime="10" />
-		<monster name="Rotworm" x="7" y="-8" z="7" spawntime="10" />
-		<monster name="Rotworm" x="7" y="-7" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-4" y="-6" z="7" spawntime="10" />
-		<monster name="Rotworm" x="3" y="-5" z="7" spawntime="10" />
-		<monster name="Rotworm" x="4" y="-5" z="7" spawntime="10" />
-		<monster name="Rotworm" x="5" y="-5" z="7" spawntime="10" />
-		<monster name="Rotworm" x="8" y="-5" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-5" y="-4" z="7" spawntime="10" />
-		<monster name="Rotworm" x="8" y="-4" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-8" y="-3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-2" y="-3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-1" y="-3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="0" y="-3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-7" y="-2" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-6" y="-2" z="7" spawntime="10" />
-		<monster name="Rotworm" x="4" y="-2" z="7" spawntime="10" />
-		<monster name="Rotworm" x="5" y="-2" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-7" y="0" z="7" spawntime="10" />
-		<monster name="Rotworm" x="5" y="1" z="7" spawntime="10" />
-		<monster name="Rotworm" x="6" y="1" z="7" spawntime="10" />
-		<monster name="Rotworm" x="10" y="1" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-4" y="3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="0" y="3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="7" y="3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-8" y="4" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-5" y="4" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-4" y="4" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-7" y="7" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-1" y="7" z="7" spawntime="10" />
-		<monster name="Rotworm" x="0" y="7" z="7" spawntime="10" />
-		<monster name="Rotworm" x="7" y="7" z="7" spawntime="10" />
-		<monster name="Rotworm" x="8" y="7" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-5" y="8" z="7" spawntime="10" />
-		<monster name="Rotworm" x="7" y="8" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-6" y="9" z="7" spawntime="10" />
-		<monster name="Rotworm" x="3" y="9" z="7" spawntime="10" />
-		<monster name="Rotworm" x="1" y="10" z="7" spawntime="10" />
-		<monster name="Rotworm" x="2" y="10" z="7" spawntime="10" />
+		<monster name="Rotworm" x="3" y="-9" z="7" spawntime="1" />
+		<monster name="Rotworm" x="7" y="-9" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-8" y="-8" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-5" y="-8" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-2" y="-8" z="7" spawntime="1" />
+		<monster name="Rotworm" x="7" y="-8" z="7" spawntime="1" />
+		<monster name="Rotworm" x="7" y="-7" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-4" y="-6" z="7" spawntime="1" />
+		<monster name="Rotworm" x="3" y="-5" z="7" spawntime="1" />
+		<monster name="Rotworm" x="4" y="-5" z="7" spawntime="1" />
+		<monster name="Rotworm" x="5" y="-5" z="7" spawntime="1" />
+		<monster name="Rotworm" x="8" y="-5" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-5" y="-4" z="7" spawntime="1" />
+		<monster name="Rotworm" x="8" y="-4" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-8" y="-3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-2" y="-3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-1" y="-3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="0" y="-3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-7" y="-2" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-6" y="-2" z="7" spawntime="1" />
+		<monster name="Rotworm" x="4" y="-2" z="7" spawntime="1" />
+		<monster name="Rotworm" x="5" y="-2" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-7" y="0" z="7" spawntime="1" />
+		<monster name="Rotworm" x="5" y="1" z="7" spawntime="1" />
+		<monster name="Rotworm" x="6" y="1" z="7" spawntime="1" />
+		<monster name="Rotworm" x="10" y="1" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-4" y="3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="0" y="3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="7" y="3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-8" y="4" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-5" y="4" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-4" y="4" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-7" y="7" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-1" y="7" z="7" spawntime="1" />
+		<monster name="Rotworm" x="0" y="7" z="7" spawntime="1" />
+		<monster name="Rotworm" x="7" y="7" z="7" spawntime="1" />
+		<monster name="Rotworm" x="8" y="7" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-5" y="8" z="7" spawntime="1" />
+		<monster name="Rotworm" x="7" y="8" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-6" y="9" z="7" spawntime="1" />
+		<monster name="Rotworm" x="3" y="9" z="7" spawntime="1" />
+		<monster name="Rotworm" x="1" y="10" z="7" spawntime="1" />
+		<monster name="Rotworm" x="2" y="10" z="7" spawntime="1" />
 	</spawn>
 	<spawn centerx="1180" centery="724" centerz="7" radius="5">
-		<monster name="Rotworm" x="-5" y="-3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="0" y="-3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="5" y="-3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-5" y="0" z="7" spawntime="10" />
-		<monster name="Rotworm" x="5" y="0" z="7" spawntime="10" />
-		<monster name="Rotworm" x="-5" y="3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="0" y="3" z="7" spawntime="10" />
-		<monster name="Rotworm" x="5" y="3" z="7" spawntime="10" />
+		<monster name="Rotworm" x="-5" y="-3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="0" y="-3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="5" y="-3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-5" y="0" z="7" spawntime="1" />
+		<monster name="Rotworm" x="5" y="0" z="7" spawntime="1" />
+		<monster name="Rotworm" x="-5" y="3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="0" y="3" z="7" spawntime="1" />
+		<monster name="Rotworm" x="5" y="3" z="7" spawntime="1" />
 	</spawn>
 	<spawn centerx="1081" centery="730" centerz="7" radius="5">
 		<monster name="Chicken" x="-4" y="-5" z="7" spawntime="60" />
@@ -154,6 +154,9 @@
 		<monster name="Goblin Assassin" x="1" y="0" z="7" spawntime="60" />
 		<monster name="Goblin Assassin" x="-3" y="1" z="7" spawntime="60" />
 		<monster name="Goblin Assassin" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1117" centery="739" centerz="7" radius="5">
+		<monster name="Amazon" x="-1" y="-2" z="7" spawntime="1" />
 	</spawn>
 	<spawn centerx="1089" centery="747" centerz="7" radius="5">
 		<monster name="Goblin Scavenger" x="-2" y="-1" z="7" spawntime="60" />
@@ -281,7 +284,7 @@
 		<monster name="Demon" x="7" y="7" z="8" spawntime="60" direction="1" />
 	</spawn>
 	<spawn centerx="924" centery="640" centerz="8" radius="8">
-		<monster name="Rotworm" x="-7" y="7" z="8" spawntime="10" direction="3" />
+		<monster name="Rotworm" x="-7" y="7" z="8" spawntime="1" direction="3" />
 	</spawn>
 	<spawn centerx="1000" centery="690" centerz="8" radius="5">
 		<monster name="Cave Rat" x="-4" y="-1" z="8" spawntime="60" />
