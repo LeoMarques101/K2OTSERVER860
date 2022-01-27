@@ -32,7 +32,7 @@ function SICKLE.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	return destroyItem(player, target, toPosition)
 
 end
-
+--[[
 local FIRE_BUG = Action()
 function FIRE_BUG.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 	if target:getId() == 5466 then
@@ -46,7 +46,7 @@ end
 
 FIRE_BUG:id(5468)
 FIRE_BUG:register()
-
+]]
 SICKLE:id(2405)
 SICKLE:register()
 

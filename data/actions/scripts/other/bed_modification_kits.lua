@@ -3,6 +3,8 @@ local beds = {
 	[7905] = {{7819, 7820}, {7821, 7822}}, -- yellow kit
 	[7906] = {{7815, 7816}, {7817, 7818}}, -- red kit
 	[7907] = {{1754, 1755}, {1760, 1761}}, -- removal kit
+	[12663] = {{1758, 1759}, {1756, 1757}},  -- cot kit
+	[12664] = {{3836, 3837}, {3838, 3839}},  -- hammock kit
 }
 
 local function internalBedTransform(item, targetItem, toPosition, itemArray)

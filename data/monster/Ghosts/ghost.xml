@@ -23,7 +23,6 @@
 	</attacks>
 	<defenses armor="10" defense="10"/>
 	<elements>
-		<element physicalPercent="100"/>
 		<element earthPercent="100"/>
 		<element deathPercent="100"/>
 	</elements>
