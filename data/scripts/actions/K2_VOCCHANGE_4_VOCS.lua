@@ -1,3 +1,28 @@
+--[[
+Colocar no schema.sql depois de players
+
+CREATE TABLE IF NOT EXISTS `players_k2vocchange` (
+  `player_id` int(11) NOT NULL,
+  `vocation` int(11) NOT NULL DEFAULT '0',
+  `maglevel` int(11) NOT NULL DEFAULT '0',
+  `manaspent` int(11) unsigned NOT NULL DEFAULT '0',
+  `skill_fist` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_fist_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_club` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_club_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_sword` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_sword_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_axe` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_axe_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_dist` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_dist_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  `skill_shielding` int(10) unsigned NOT NULL DEFAULT 10,
+  `skill_shielding_tries` bigint(20) unsigned NOT NULL DEFAULT 0,
+  FOREIGN KEY (`player_id`) REFERENCES `players`(`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
+]]
+
 local ALAVANCA = {
     [1945] = {usada = 1946},
     [1946] = {usada = 1945},
@@ -32,7 +57,7 @@ local VOCACOES_query = {
 	[4] = {nome = "Knight", id = 4},
 }
 
-local custo = 10000
+local custo = 100000
 
 function round(num, numDecimalPlaces)
   local mult = 10^(numDecimalPlaces or 0)

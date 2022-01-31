@@ -36,7 +36,7 @@ function k2_alavanca_bless.onUse(player, item, fromPosition, target, toPosition,
             player:addBlessing(bless.number)
             player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
         else
-            player:sendTextMessage(MESSAGE_INFO_DESCR,"Voce nao tem ".. CUSTO_BLESS .." gps para comprar essa bless!"..playermoney)
+            player:sendTextMessage(MESSAGE_INFO_DESCR,"Voce nao tem ".. CUSTO_BLESS .." gps para comprar essa bless!")
             player:getPosition():sendMagicEffect(CONST_ME_POFF)
         end
     end

@@ -11,10 +11,26 @@
 		<monster name="Poison Spider" x="0" y="-1" z="3" spawntime="60" />
 		<monster name="Spider" x="0" y="1" z="3" spawntime="60" />
 	</spawn>
+	<spawn centerx="1058" centery="705" centerz="5" radius="7">
+		<npc name="OUTFIT_Demon Hunter" x="-5" y="1" z="5" spawntime="1" />
+		<npc name="OUTFIT_Yalaharian" x="0" y="1" z="5" spawntime="1" />
+		<npc name="OUTFIT_Warmaster" x="-5" y="4" z="5" spawntime="1" />
+		<npc name="OUTFIT_Wayfarer" x="0" y="4" z="5" spawntime="1" />
+	</spawn>
 	<spawn centerx="1004" centery="763" centerz="5" radius="3">
 		<monster name="Poison Spider" x="-1" y="-1" z="5" spawntime="60" />
 		<monster name="Poison Spider" x="-1" y="1" z="5" spawntime="60" />
 		<monster name="Poison Spider" x="1" y="1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1058" centery="705" centerz="6" radius="7">
+		<npc name="OUTFIT_Pirate" x="-5" y="1" z="6" spawntime="1" />
+		<npc name="OUTFIT_Assassin" x="-1" y="1" z="6" spawntime="1" />
+		<npc name="OUTFIT_Beggar" x="3" y="1" z="6" spawntime="1" />
+		<npc name="OUTFIT_Shaman" x="-5" y="4" z="6" spawntime="1" />
+		<npc name="OUTFIT_Norse" x="-1" y="4" z="6" spawntime="1" />
+		<npc name="OUTFIT_Nightmare" x="3" y="4" z="6" spawntime="1" />
+		<npc name="OUTFIT_Jester" x="-5" y="7" z="6" spawntime="1" />
+		<npc name="OUTFIT_Brotherhood" x="-1" y="7" z="6" spawntime="1" />
 	</spawn>
 	<spawn centerx="1039" centery="739" centerz="6" radius="2">
 		<npc name="Ikea" x="-1" y="0" z="6" spawntime="60" />
@@ -44,6 +60,19 @@
 	<spawn centerx="1013" centery="702" centerz="7" radius="2">
 		<npc name="Banker" x="-2" y="0" z="7" spawntime="60" direction="3" />
 	</spawn>
+	<spawn centerx="1058" centery="705" centerz="7" radius="7">
+		<npc name="OUTFIT_Citizen" x="-6" y="1" z="7" spawntime="1" />
+		<npc name="OUTFIT_Hunter" x="-3" y="1" z="7" spawntime="1" />
+		<npc name="OUTFIT_Mage" x="0" y="1" z="7" spawntime="1" />
+		<npc name="OUTFIT_Knight" x="3" y="1" z="7" spawntime="1" />
+		<npc name="OUTFIT_Noble" x="6" y="1" z="7" spawntime="1" />
+		<npc name="OUTFIT_Summoner" x="-6" y="4" z="7" spawntime="1" />
+		<npc name="OUTFIT_Warrior" x="-3" y="4" z="7" spawntime="1" />
+		<npc name="OUTFIT_Barbarian" x="0" y="4" z="7" spawntime="1" />
+		<npc name="OUTFIT_Druid" x="3" y="4" z="7" spawntime="1" />
+		<npc name="OUTFIT_Wizard" x="6" y="4" z="7" spawntime="1" />
+		<npc name="OUTFIT_Oriental" x="-6" y="7" z="7" spawntime="1" />
+	</spawn>
 	<spawn centerx="1082" centery="706" centerz="7" radius="3">
 		<monster name="Target Dummy" x="-3" y="-1" z="7" spawntime="60" />
 		<monster name="Target Dummy" x="0" y="-1" z="7" spawntime="60" />
@@ -69,53 +98,6 @@
 	<spawn centerx="955" centery="720" centerz="7" radius="7">
 		<npc name="K2 Guard_DIREITA" x="0" y="-2" z="7" spawntime="60" direction="1" />
 		<npc name="K2 Guard_DIREITA" x="0" y="2" z="7" spawntime="60" direction="1" />
-	</spawn>
-	<spawn centerx="1140" centery="723" centerz="7" radius="10">
-		<monster name="Rotworm" x="3" y="-9" z="7" spawntime="1" />
-		<monster name="Rotworm" x="7" y="-9" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-8" y="-8" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-5" y="-8" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-2" y="-8" z="7" spawntime="1" />
-		<monster name="Rotworm" x="7" y="-8" z="7" spawntime="1" />
-		<monster name="Rotworm" x="7" y="-7" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-4" y="-6" z="7" spawntime="1" />
-		<monster name="Rotworm" x="3" y="-5" z="7" spawntime="1" />
-		<monster name="Rotworm" x="4" y="-5" z="7" spawntime="1" />
-		<monster name="Rotworm" x="5" y="-5" z="7" spawntime="1" />
-		<monster name="Rotworm" x="8" y="-5" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-5" y="-4" z="7" spawntime="1" />
-		<monster name="Rotworm" x="8" y="-4" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-8" y="-3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-2" y="-3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-1" y="-3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="0" y="-3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-7" y="-2" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-6" y="-2" z="7" spawntime="1" />
-		<monster name="Rotworm" x="4" y="-2" z="7" spawntime="1" />
-		<monster name="Rotworm" x="5" y="-2" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-7" y="0" z="7" spawntime="1" />
-		<monster name="Demodras" x="9" y="0" z="7" spawntime="1" />
-		<monster name="Rotworm" x="5" y="1" z="7" spawntime="1" />
-		<monster name="Rotworm" x="6" y="1" z="7" spawntime="1" />
-		<monster name="Rotworm" x="10" y="1" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-4" y="3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="0" y="3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="7" y="3" z="7" spawntime="1" />
-		<monster name="Xenia" x="9" y="3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-8" y="4" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-5" y="4" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-4" y="4" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-7" y="7" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-1" y="7" z="7" spawntime="1" />
-		<monster name="Rotworm" x="0" y="7" z="7" spawntime="1" />
-		<monster name="Rotworm" x="7" y="7" z="7" spawntime="1" />
-		<monster name="Rotworm" x="8" y="7" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-5" y="8" z="7" spawntime="1" />
-		<monster name="Rotworm" x="7" y="8" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-6" y="9" z="7" spawntime="1" />
-		<monster name="Rotworm" x="3" y="9" z="7" spawntime="1" />
-		<monster name="Rotworm" x="1" y="10" z="7" spawntime="1" />
-		<monster name="Rotworm" x="2" y="10" z="7" spawntime="1" />
 	</spawn>
 	<spawn centerx="1180" centery="724" centerz="7" radius="5">
 		<monster name="Rotworm" x="-5" y="-3" z="7" spawntime="1" />
@@ -156,9 +138,6 @@
 		<monster name="Goblin Assassin" x="1" y="0" z="7" spawntime="60" />
 		<monster name="Goblin Assassin" x="-3" y="1" z="7" spawntime="60" />
 		<monster name="Goblin Assassin" x="0" y="1" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1117" centery="739" centerz="7" radius="5">
-		<monster name="Amazon" x="-1" y="-2" z="7" spawntime="1" />
 	</spawn>
 	<spawn centerx="1089" centery="747" centerz="7" radius="5">
 		<monster name="Goblin Scavenger" x="-2" y="-1" z="7" spawntime="60" />
@@ -590,6 +569,7 @@
 		<monster name="Rotworm" x="-6" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-1" y="0" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-7" y="1" z="8" spawntime="60" />
+		<monster name="Rotworm Queen" x="2" y="1" z="8" spawntime="1000" />
 		<monster name="Carrion Worm" x="0" y="2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-10" y="4" z="8" spawntime="60" />
 		<monster name="Rotworm" x="0" y="4" z="8" spawntime="60" />
