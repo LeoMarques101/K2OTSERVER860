@@ -2,6 +2,8 @@
 <monsters>
 
 	<!-- K2 -->
+	<monster name="Lucy" file="K2/Lucy.xml"/>
+	<monster name="Gordinha" file="K2/Gordinha.xml"/>
 	<monster name="K2 Assassin" file="K2/K2assassin.xml"/>
 	<monster name="Target" file="K2/target.xml"/>
 	<monster name="Target Dummy" file="K2/target_dummy.xml"/>

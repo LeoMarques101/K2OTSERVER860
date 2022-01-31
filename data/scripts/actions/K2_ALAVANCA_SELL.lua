@@ -185,7 +185,8 @@ local moveis_toaid = 1455
 
 local k2_alavanca_moveis = Action()
 local k2_alavanca_itens = Action()
-local k2_alavanca_precos = MoveEvent()
+local k2_alavanca_precos_in = MoveEvent()
+local k2_alavanca_precos_out = MoveEvent()
 
 
 function k2_alavanca_moveis.onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -263,7 +264,11 @@ function k2_alavanca_itens.onUse(player, item, fromPosition, target, toPosition,
 	return true
 end
 
-function k2_alavanca_precos.onStepIn(creature, item, position, fromPosition)
+
+function k2_alavanca_precos_in.onStepIn(creature, item, position, fromPosition)
+	if item.itemid == 3216 then
+		item:transform(3217)
+	end
     local key = item.actionid - precos_fromaid
     local ShopItem = ITEM_ALAVANCA[key]
     local itemType = ItemType(ShopItem.id)
@@ -281,13 +286,24 @@ function k2_alavanca_precos.onStepIn(creature, item, position, fromPosition)
         str = ShopItem.cargas .." ".. itemType:getName() .." por: ".. custo .." golds. ["..peso.." oz]"
     end
 
-    creature:sendTextMessage(MESSAGE_STATUS_DEFAULT, str)
+    creature:sendTextMessage(MESSAGE_STATUS_DEFAULT , str)
 
 	return true
 end
 
+function k2_alavanca_precos_out.onStepOut(creature, item, position, fromPosition)
+	if item.itemid == 3217 then
+		item:transform(3216)
+	end
+	return true
+end
+
 for aid = precos_fromaid, precos_toaid do
-    k2_alavanca_precos:aid(aid)
+    k2_alavanca_precos_in:aid(aid)
+end
+
+for aid = precos_fromaid, precos_toaid do
+    k2_alavanca_precos_out:aid(aid)
 end
 
 for aid = itens_fromaid, itens_toaid do
@@ -298,7 +314,7 @@ for aid = moveis_fromaid, moveis_toaid do
     k2_alavanca_moveis:aid(aid)
 end
 
-
-k2_alavanca_precos:register()
+k2_alavanca_precos_out:register()
+k2_alavanca_precos_in:register()
 k2_alavanca_moveis:register()
 k2_alavanca_itens:register()

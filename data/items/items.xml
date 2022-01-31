@@ -18213,10 +18213,12 @@
 	<item id="10151" article="a" name="golem part">
 		<attribute key="weight" value="35" />
 	</item>
+	<!--
 	<item id="10152" article="a" name="worm punisher">
 		<attribute key="description" value="The hammer would be more effective when heated." />
 		<attribute key="weight" value="6450" />
 	</item>
+	-->
 	<item id="10153" article="a" name="golem disassembler">
 		<attribute key="description" value="It looks suspiciously similar to a crowbar." />
 		<attribute key="weight" value="1500" />

@@ -56,9 +56,13 @@ if time == nil then time = 0	end
 
         if isCreature(npc) then
         	
+        	math.randomseed(os.time())
+        	--math.random(0, 132)
+        	npc:say("!outfit "..npc:getName(), TALKTYPE_MONSTER_SAY, false, nil, npc:getPosition())
         	npc:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN) --CONST_ME_POFF
-        	Game.sendAnimatedText(npc:getName(), npc:getPosition(), 30)
-        	npc:setOutfit({lookType = (getCreatureOutfit(npc).lookType == tipo.female and tipo.male or tipo.female ), lookHead = 0, lookBody=116, lookLegs=76, lookFeet = 114, lookAddons = 3})
+        	--Game.sendAnimatedText("!outfit "..npc:getName(),npc:getPosition(), 30)
+        	npc:setOutfit({lookType = (getCreatureOutfit(npc).lookType == tipo.female and tipo.male or tipo.female ), lookHead = 0, lookBody=math.random(77, 94), lookLegs=95, lookFeet = 114, lookAddons = 3})
+        	--npc:setOutfit({lookType = (getCreatureOutfit(npc).lookType == tipo.female and tipo.male or tipo.female ), lookHead = math.random(0, 132), lookBody=math.random(0, 132), lookLegs=math.random(0, 132), lookFeet = math.random(0, 132), lookAddons = 3})
         
         end
 

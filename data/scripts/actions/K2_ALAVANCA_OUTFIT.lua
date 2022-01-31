@@ -175,11 +175,40 @@ local ADDONS = {
 	[45] = {tipo = 2, outfit = OUTFITS[22] , addon = OUTFITS[22].addon2}
 }
 
+local keys = {
+	["cityzen"] = {key= 0},
+	["hunter"] = {key= 1},
+	["mage"] = {key= 2},
+	["knight"] = {key= 3},
+	["noble"] = {key= 4},
+	["summoner"] = {key= 5},
+	["warrior"] = {key= 6},
+	["barbarian"] = {key= 7},
+	["druid"] = {key= 8},
+	["wizard"] = {key= 9},
+	["oriental"] = {key= 10},
+	["pirate"] = {key= 11},
+	["assassin"] = {key= 12},
+	["beggar"] = {key= 13},
+	["shaman"] = {key= 14},
+	["norse"] = {key= 15},
+	["nightmare"] = {key= 16},
+	["jester"] = {key= 17},
+	["brotherhood"] = {key= 18},
+	["demon Hunter"] = {key= 19},
+	["yalaharian"] = {key= 20},
+	["warmaster"] = {key= 21},
+	["wayfarer"] = {key= 22}
+}
+
 local outfits_fromaid = 1700
 local outfits_toaid = 1722
 
 local addons_fromaid = 1800
 local addons_toaid = 1845
+
+local info_fromaid = 1900
+local info_toaid = 1902
 
 local k2_alavanca_outfits = Action()
 function k2_alavanca_outfits.onUse(player, item, fromPosition, target, toPosition, isHotkey)
@@ -313,6 +342,79 @@ item:transform(ALAVANCA[item.itemid].usada)
 	return true
 end
 
+local k2_outfit_info = MoveEvent()
+function k2_outfit_info.onStepIn(creature, item, position, fromPosition)
+	local key = item.actionid - info_fromaid
+	local pos = Position(position.x, position.y-1, position.z)
+
+	if key == 0 then
+		creature:say("Outfit", TALKTYPE_MONSTER_SAY, false, nil, position)
+		return true
+	elseif key == 1 then
+		creature:say("Addon 1", TALKTYPE_MONSTER_SAY, false, nil, position)
+		return true
+	else
+		creature:say("Addon 2", TALKTYPE_MONSTER_SAY, false, nil, position)
+		return true
+	end
+
+	return true
+end
+
+local K2_outfit_talk = TalkAction("!outfit")
+
+function K2_outfit_talk.onSay(player, words, param)
+
+	local parametro = param:lower()
+	if keys[parametro] == nil then
+		player:sendTextMessage(MESSAGE_INFO_DESCR, 'Nome incorreto')
+		return false
+	end
+
+	local outfit = OUTFITS[keys[parametro].key]
+	local str = ""
+
+	if outfit then
+
+		str = "==== " .. outfit.name .. " ===="
+		str = str .. "\n\n------Outfit------"
+		str = str .. "\nCusto: "..outfit.custo
+		
+		if #outfit.items > 0 then
+			str = str .. "\nItens: "
+			for i,item in ipairs(outfit.items) do
+				str = str .. "\n" .. item.quant .. " " .. ItemType(item.id):getName()
+			end
+		end
+		str = str .. "\n\n------Addon 1------"
+		str = str .. "\nCusto: ".. outfit.addon1.custo
+
+		if #outfit.addon1.items > 0 then
+			str = str .. "\nItens: "
+			for i,item in ipairs(outfit.addon1.items) do
+				str = str .. "\n  " .. item.quant .. " " .. ItemType(item.id):getName()
+			end
+		end
+		str = str .. "\n\n------Addon 2------"
+		str = str .. "\nCusto: ".. outfit.addon2.custo
+		if #outfit.addon2.items > 0 then
+			str = str .. "\nItens: "
+			for i,item in ipairs(outfit.addon2.items) do
+				str = str .. "\n  " .. item.quant .. " " .. ItemType(item.id):getName()
+			end
+		end
+
+	else
+		player:sendTextMessage(MESSAGE_INFO_DESCR, 'Nome incorreto')
+		return false
+	end
+	player:showTextDialog(7726,str)
+    return false
+end
+
+K2_outfit_talk:separator(" ")
+K2_outfit_talk:register()
+
 
 for aid = addons_fromaid, addons_toaid do
     k2_alavanca_addons:aid(aid)
@@ -322,5 +424,10 @@ for aid = outfits_fromaid, outfits_toaid do
     k2_alavanca_outfits:aid(aid)
 end
 
+for aid = info_fromaid, info_toaid do
+    k2_outfit_info:aid(aid)
+end
+
+k2_outfit_info:register()
 k2_alavanca_addons:register()
 k2_alavanca_outfits:register()
