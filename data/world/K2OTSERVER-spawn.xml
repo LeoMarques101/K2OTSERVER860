@@ -129,8 +129,6 @@
 		<monster name="Chicken" x="-4" y="5" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1038" centery="734" centerz="7" radius="6">
-		<npc name="Addon Seller" x="-3" y="-6" z="7" spawntime="60" direction="1" />
-		<npc name="Outfit Seller" x="4" y="-6" z="7" spawntime="60" direction="3" />
 		<npc name="Sapateiro" x="-3" y="0" z="7" spawntime="60" direction="1" />
 		<npc name="Mage Shop" x="4" y="0" z="7" spawntime="60" direction="3" />
 		<npc name="Armo Shop" x="-3" y="6" z="7" spawntime="60" direction="1" />

@@ -2095,8 +2095,40 @@ void ProtocolGame::sendOutfitWindow()
 
 	std::vector<ProtocolOutfit> protocolOutfits;
 	if (player->isAccessPlayer()) {
-		static const std::string gamemasterOutfitName = "Gamemaster";
-		protocolOutfits.emplace_back(gamemasterOutfitName, 75, 0);
+		static const std::string godOutfitName = "God";
+		protocolOutfits.emplace_back(godOutfitName, 302, 0);
+		static const std::string gmOutfitName = "Gamemaster";
+		protocolOutfits.emplace_back(gmOutfitName, 75, 0);
+		static const std::string cmOutfitName = "CM";
+		protocolOutfits.emplace_back(cmOutfitName, 266, 0);
+
+		static const std::string Archdemon = "Archdemon";
+		protocolOutfits.emplace_back(Archdemon, 12, 0);
+
+		static const std::string Elf = "Elf";
+		protocolOutfits.emplace_back(Elf, 159, 0);
+
+		static const std::string Dwarf = "Dwarf";
+		protocolOutfits.emplace_back(Dwarf, 160, 0);
+
+		static const std::string Frog = "Frog";
+		protocolOutfits.emplace_back(Frog, 226, 0);
+
+		static const std::string Cult = "Cult";
+		protocolOutfits.emplace_back(Cult, 194, 0);
+
+		static const std::string Headsplitter = "Headsplitter";
+		protocolOutfits.emplace_back(Headsplitter, 253, 0);
+
+		static const std::string Skullhunter = "Skullhunter";
+		protocolOutfits.emplace_back(Skullhunter, 254, 0);
+
+		static const std::string Bloodwalker = "Bloodwalker";
+		protocolOutfits.emplace_back(Bloodwalker, 255, 0);
+
+		static const std::string Brutetamer = "Brutetamer";
+		protocolOutfits.emplace_back(Brutetamer, 264, 0);
+
 	}
 
 	protocolOutfits.reserve(outfits.size());
