@@ -17,7 +17,7 @@ local ALAVANCA_BLESS = {
 
     --venda de bless
 local CUSTO_BLESS = 20000
-
+local STORAGEVALUE_PROMOTION = 30018
 local k2_alavanca_bless = Action()
 
 function k2_alavanca_bless.onUse(player, item, fromPosition, target, toPosition, isHotkey)

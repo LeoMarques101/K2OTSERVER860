@@ -9,14 +9,14 @@ local ALAVANCA = {
 
 local ITEM_ALAVANCA =
 	{    --Potions
-	    [0] = {id = 7620, peso = 1.80, cargas = 100, custouni = 50, pesofixo = false},         -- mana potion
-	    [1] = {id = 7589, peso = 2.00, cargas = 100, custouni = 90, pesofixo = false},         -- strong mana potion
-	    [2] = {id = 7590, peso = 2.20, cargas = 100, custouni = 120, pesofixo = false},        -- great mana potion
-	    [3] = {id = 7618, peso = 1.80, cargas = 100, custouni = 50, pesofixo = false},         -- healt potion
-	    [4] = {id = 7588, peso = 2.00, cargas = 100, custouni = 90, pesofixo = false},         -- strong healt potion
-	    [5] = {id = 7591, peso = 2.20, cargas = 100, custouni = 150, pesofixo = false},        -- great healt potion
-	    [6] = {id = 8473, peso = 2.20, cargas = 100, custouni = 300, pesofixo = false},        -- ultimate healt potion
-	    [7] = {id = 8472, peso = 2.20, cargas = 100, custouni = 300, pesofixo = false},        -- great spirt potion
+	    [0] = {id = 7620, peso = 2.70, cargas = 100, custouni = 50, pesofixo = false},         -- mana potion
+	    [1] = {id = 7589, peso = 2.90, cargas = 100, custouni = 90, pesofixo = false},         -- strong mana potion
+	    [2] = {id = 7590, peso = 3.10, cargas = 100, custouni = 120, pesofixo = false},        -- great mana potion
+	    [3] = {id = 7618, peso = 2.70, cargas = 100, custouni = 50, pesofixo = false},         -- healt potion
+	    [4] = {id = 7588, peso = 2.90, cargas = 100, custouni = 90, pesofixo = false},         -- strong healt potion
+	    [5] = {id = 7591, peso = 3.10, cargas = 100, custouni = 150, pesofixo = false},        -- great healt potion
+	    [6] = {id = 8473, peso = 3.10, cargas = 100, custouni = 300, pesofixo = false},        -- ultimate healt potion
+	    [7] = {id = 8472, peso = 3.10, cargas = 100, custouni = 300, pesofixo = false},        -- great spirt potion
 	    --Runas
 	    [8] = {id = 2268, peso = 0.70, cargas = 100, custouni = 135, pesofixo = false},        -- Sudden Death Rune
 	    [9] = {id = 2273, peso = 2.10, cargas = 100, custouni = 175, pesofixo = false},        -- Ultimate Healing Rune
@@ -28,11 +28,11 @@ local ITEM_ALAVANCA =
 	    [15] = {id = 2288, peso = 0.52, cargas = 100, custouni = 37, pesofixo = false},        -- Stone Shower Rune
 	    [16] = {id = 2304, peso = 0.52, cargas = 100, custouni = 57, pesofixo = false},        -- Great Fireball Rune
 	    --Treino
-	    [17] = {id = 8209, peso = 12, cargas = 200, custouni = 100, pesofixo = true},          -- TREINO DE SWORD
-	    [18] = {id = 12661, peso = 12, cargas = 200, custouni = 100, pesofixo = true},         -- TREINO DE AXE
-	    [19] = {id = 10152, peso = 12, cargas = 200, custouni = 100, pesofixo = true},         -- TREINO DE CLUB
-	    [20] = {id = 12318, peso = 12, cargas = 200, custouni = 100, pesofixo = true},         -- TREINO DE ML
-	    [21] = {id = 12662, peso = 12, cargas = 200, custouni = 100, pesofixo = true},         -- TREINO DE DISTANCIA
+	    [17] = {id = 8209, peso = 12, cargas = 2000, custouni = 10, pesofixo = true},          -- TREINO DE SWORD
+	    [18] = {id = 12661, peso = 12, cargas = 2000, custouni = 10, pesofixo = true},         -- TREINO DE AXE
+	    [19] = {id = 10152, peso = 12, cargas = 2000, custouni = 10, pesofixo = true},         -- TREINO DE CLUB
+	    [20] = {id = 12318, peso = 12, cargas = 2000, custouni = 10, pesofixo = true},         -- TREINO DE ML
+	    [21] = {id = 12662, peso = 12, cargas = 2000, custouni = 10, pesofixo = true},         -- TREINO DE DISTANCIA
 	    --Distance
 	    [22] = {id = 2389, peso = 20, cargas = 10, custouni = 9, pesofixo = false},            -- Spear
 	    [23] = {id = 7378, peso = 25, cargas = 10, custouni = 15, pesofixo = false},           -- Royal spear

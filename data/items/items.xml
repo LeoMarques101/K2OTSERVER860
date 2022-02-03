@@ -47,7 +47,7 @@
 	<item id="12318" article="a" name="Treino de Magia">
 		<attribute key="description" value="Use em um boneco de treino, para treinar ML" />
 		<attribute key="weight" value="1200" />
-		<attribute key="charges" value="200" />
+		<attribute key="charges" value="2000" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="weaponType" value="wand" />
@@ -58,7 +58,7 @@
 	<item id="8209" article="a" name="Treino de Sword">
 		<attribute key="description" value="Use em um boneco de treino, para treinar SWORD" />
 		<attribute key="weight" value="1200" />
-		<attribute key="charges" value="200" />
+		<attribute key="charges" value="2000" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="weaponType" value="sword" />
@@ -67,7 +67,7 @@
 	<item id="12661" article="a" name="Treino de Axe">
 		<attribute key="description" value="Use em um boneco de treino, para treinar AXE" />
 		<attribute key="weight" value="1200" />
-		<attribute key="charges" value="200" />
+		<attribute key="charges" value="2000" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="weaponType" value="axe" />
@@ -76,7 +76,7 @@
 	<item id="10152" article="a" name="Treino de Club">
 		<attribute key="description" value="Use em um boneco de treino, para treinar CLUB" />
 		<attribute key="weight" value="1200" />
-		<attribute key="charges" value="200" />
+		<attribute key="charges" value="2000" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="weaponType" value="club" />
@@ -85,7 +85,7 @@
 	<item id="12662" article="a" name="Treino de Distance">
 		<attribute key="description" value="Use em um boneco de treino, para treinar DISTANCE" />
 		<attribute key="weight" value="1200" />
-		<attribute key="charges" value="200" />
+		<attribute key="charges" value="2000" />
 		<attribute key="slotType" value="ammo" />
 		<attribute key="showcharges" value="1" />
 		<attribute key="weaponType" value="distance" />
@@ -17263,7 +17263,7 @@
 		<attribute key="corpseType" value="blood" />
 		<attribute key="fluidSource" value="blood" />
 	</item>
-	<item id="9779" article="a" name="crystal column" />
+
 	<item fromid="9784" toid="9791" article="a" name="crystal column" />
 	<item fromid="9792" toid="9799" name="earth" />
 	<item id="9800" name="rock" />
@@ -18134,8 +18134,9 @@
 	<item id="10089" article="a" name="wonder glue">
 		<attribute key="weight" value="180" />
 	</item>
-	<item id="10089" article="an" name="antidote potion">
-		<attribute key="weight" value="175" />
+	<item id="10090" article="a" name="parchment">
+		<attribute key="description" value="There's a questionnaire for potential lovers on it." />
+		<attribute key="weight" value="200" />
 	</item>
 	<item id="10091" article="a" name="sky key">
 		<attribute key="type" value="key" />
