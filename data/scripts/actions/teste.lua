@@ -46,17 +46,25 @@ function CREATURE_talk.onSay(player, words, param)
 	for i,item in ipairs(creatureloot) do
 		local itemType = ItemType(item.itemId)
 
-		itens_str = itens_str .. "\n" .. itemType:getName() .. ": " .. item.chance/1000 .. "%"
+		itens_str = itens_str .. "\n(" .. item.itemId .. ") " .. itemType:getName() .. ": " .. item.chance/1000 .. "%"
 
 		for k,childLoot in ipairs(item.childLoot) do
 			local itemType_child = ItemType(childLoot.itemId)
-			itens_str = itens_str .. "\n  " .. itemType_child:getName() .. ": " .. childLoot.chance/1000 .. "%"
+			itens_str = itens_str .. "\n  (" .. childLoot.itemId .. ") " .. itemType_child:getName() .. ": " .. childLoot.chance/1000 .. "%"
 		end
 	end
 
 
 	--doPlayerSendTextMessage(player, MESSAGE_STATUS_CONSOLE_BLUE,"teste"..str)
-	doShowTextDialog(player, 1397, itens_str)
+	local str = "======== Info Monster ========"
+
+	str = str .."\n\nName: ".. creature:name()
+	str = str .."\nHp: ".. creature:maxHealth()
+	str = str .."\nXp base: ".. creature:experience()
+	str = str .."\n\n=========== Loot ==========="
+	str = str ..itens_str
+
+	player:showTextDialog(7726,str)
 	return true
 	--[[
 	local name = param
