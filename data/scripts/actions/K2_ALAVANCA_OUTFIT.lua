@@ -272,7 +272,7 @@ end
 
 local k2_alavanca_addons = Action()
 function k2_alavanca_addons.onUse(player, item, fromPosition, target, toPosition, isHotkey)
-item:transform(ALAVANCA[item.itemid].usada)
+	item:transform(ALAVANCA[item.itemid].usada)
 
 	local key = item.actionid - addons_fromaid
 	local addontipo = ADDONS[key].tipo

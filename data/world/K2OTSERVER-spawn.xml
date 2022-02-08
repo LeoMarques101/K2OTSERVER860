@@ -160,6 +160,9 @@
 		<monster name="Dragon" x="0" y="3" z="6" spawntime="60" />
 		<monster name="Dragon" x="-5" y="4" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="1013" centery="702" centerz="6" radius="2">
+		<npc name="Mochileira" x="-2" y="0" z="6" spawntime="60" direction="3" />
+	</spawn>
 	<spawn centerx="1058" centery="705" centerz="6" radius="7">
 		<npc name="OUTFIT_Pirate" x="-5" y="1" z="6" spawntime="1" />
 		<npc name="OUTFIT_Assassin" x="-1" y="1" z="6" spawntime="1" />
