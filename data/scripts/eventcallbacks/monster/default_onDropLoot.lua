@@ -33,8 +33,13 @@ ec.onDropLoot = function(self, corpse)
 				local autolootItems = autolootContainer:getItems()
 
 				for _, item in ipairs(autolootItems) do
-					item:moveTo(player)
+
+					player:addItem(item:getId(),item:getCount())
+					item:remove(item:getCount())
+
+					--item:moveTo(player)
 				end
+				autolootContainer:remove(1)
 			end
 
 			text = text .. '.'
