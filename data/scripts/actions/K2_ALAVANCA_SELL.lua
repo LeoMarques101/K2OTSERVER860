@@ -92,14 +92,14 @@ local ITEM_ALAVANCA =
 	    [72] = {id = 2671, peso = 20, cargas = 5, custouni = 10, pesofixo = false},            -- Ham 
 	    [73] = {id = 2672, peso = 30, cargas = 5, custouni = 30, pesofixo = false},            -- Dragon Ham 
 	    --tools
-	    [74] = {id = 2554, peso = 35, cargas = 1, custouni = 100, pesofixo = true},            -- Shovel
-	    [75] = {id = 2120, peso = 18, cargas = 1, custouni = 100, pesofixo = true},            -- Rope
-	    [76] = {id = 2595, peso = 18, cargas = 1, custouni = 30, pesofixo = true},             -- Parcel 
-	    [77] = {id = 2599, peso = 0.10, cargas = 1, custouni = 10, pesofixo = true},           -- Label
-	    [78] = {id = 5942, peso = 5, cargas = 1, custouni = 15000, pesofixo = true},           -- blessed wooden stake
-	    [79] = {id = 5908, peso = 1, cargas = 1, custouni = 10000, pesofixo = true},           -- obsidian knife
-	    [80] = {id = 2004, peso = 18, cargas = 1, custouni = 30, pesofixo = true},             -- golden backpack
-	    [81] = {id = 1997, peso = 8, cargas = 1, custouni = 10, pesofixo = true},              -- golden bag
+	    [74] = {id = 2554, peso = 35, cargas = 1, custouni = 100, pesofixo = false},            -- Shovel
+	    [75] = {id = 2120, peso = 18, cargas = 1, custouni = 100, pesofixo = false},            -- Rope
+	    [76] = {id = 2595, peso = 18, cargas = 1, custouni = 30, pesofixo = false},             -- Parcel 
+	    [77] = {id = 2599, peso = 0.10, cargas = 1, custouni = 10, pesofixo = false},           -- Label
+	    [78] = {id = 5942, peso = 5, cargas = 1, custouni = 15000, pesofixo = false},           -- blessed wooden stake
+	    [79] = {id = 5908, peso = 1, cargas = 1, custouni = 10000, pesofixo = false},           -- obsidian knife
+	    [80] = {id = 2004, peso = 18, cargas = 1, custouni = 30, pesofixo = false},             -- golden backpack
+	    [81] = {id = 1997, peso = 8, cargas = 1, custouni = 10, pesofixo = false},              -- golden bag
 	}
 
 
