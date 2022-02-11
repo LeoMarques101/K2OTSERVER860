@@ -29,5 +29,6 @@ function onLogin(player)
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
 	player:registerEvent("k2kill")
+	player:registerEvent("ExtendedOpcode")
 	return true
 end

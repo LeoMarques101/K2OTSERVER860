@@ -499,6 +499,7 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 		case 0x14: g_dispatcher.addTask(createTask(std::bind(&ProtocolGame::logout, getThis(), true, false))); break;
 		case 0x1E: addGameTask(&Game::playerReceivePing, player->getID()); break;
 		case 0x32: parseExtendedOpcode(msg); break; //otclient extended opcode
+		case 0x42: parseChangeAwareRange(msg); break;
 		case 0x64: parseAutoWalk(msg); break;
 		case 0x65: addGameTask(&Game::playerMove, player->getID(), DIRECTION_NORTH); break;
 		case 0x66: addGameTask(&Game::playerMove, player->getID(), DIRECTION_EAST); break;
@@ -2555,12 +2556,16 @@ void ProtocolGame::parseChangeAwareRange(NetworkMessage& msg)
 
 void ProtocolGame::updateAwareRange(int width, int height)
 {
+
 	if (!otclientV8)
 		return;
 
+
 	// If you want to change max awareRange, edit maxViewportX, maxViewportY, maxClientViewportX, maxClientViewportY in map.h
+	
 	awareRange.width = std::min(Map::maxViewportX * 2 - 1, std::min(Map::maxClientViewportX * 2 + 1, std::max(15, width)));
 	awareRange.height = std::min(Map::maxViewportY * 2 - 1, std::min(Map::maxClientViewportY * 2 + 1, std::max(11, height)));
+	
 	// numbers must be odd
 	if (awareRange.width % 2 != 1)
 		awareRange.width -= 1;

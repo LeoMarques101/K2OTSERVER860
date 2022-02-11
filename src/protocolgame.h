@@ -303,8 +303,8 @@ class ProtocolGame final : public Protocol
 		uint16_t otclientV8 = 0;
 		
 		struct AwareRange {
-			int width = 17;//17
-			int height = 13;//13
+			int width = 17;
+			int height = 13;
 
 			int left() const { return width / 2; }
 			int right() const { return 1 + width / 2; }
