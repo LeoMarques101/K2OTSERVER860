@@ -109,6 +109,8 @@ void Game::setGameState(GameState_t newState)
 
 			quests.loadFromXml();
 
+			shaders.loadFromXml();
+
 			loadMotdNum();
 			loadPlayersRecord();
 			loadAccountStorageValues();
@@ -3185,6 +3187,16 @@ void Game::playerRequestOutfit(uint32_t playerId)
 	player->sendOutfitWindow();
 }
 
+//nao sei para que serve
+void Game::playerToggleOutfitExtension(uint32_t playerId, int shader)
+{
+	Player* player = getPlayerByID(playerId);
+	if (!player) {
+		return;
+	}
+
+}
+
 void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 {
 	if (!g_config.getBoolean(ConfigManager::ALLOW_CHANGEOUTFIT)) {
@@ -3196,6 +3208,29 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 		return;
 	}
 
+
+	const Outfit* playerOutfit = Outfits::getInstance().getOutfitByLookType(player->getSex(), outfit.lookType);
+	if (!playerOutfit) {
+		//outfit.lookShader = 0;
+		outfit.lookShader = "";
+	}
+
+
+	//if (outfit.lookShader) {
+	//	Shader* shader = shaders.getShaderByID(outfit.lookShader);
+
+	if (!outfit.lookShader.empty()) {
+	Shader* shader = shaders.getShaderByName(outfit.lookShader);
+		if (!shader) {
+			return;
+		}
+
+		if (!player->hasShader(shader)) {
+			return;
+		}
+	}
+
+
 	if (player->canWear(outfit.lookType, outfit.lookAddons)) {
 		player->defaultOutfit = outfit;
 
@@ -3206,6 +3241,10 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 		internalCreatureChangeOutfit(player, outfit);
 	}
 }
+
+
+
+
 
 void Game::playerShowQuestLog(uint32_t playerId)
 {
@@ -4995,6 +5034,7 @@ bool Game::reload(ReloadTypes_t reloadType)
 
 		case RELOAD_TYPE_QUESTS: return quests.reload();
 		case RELOAD_TYPE_RAIDS: return raids.reload() && raids.startup();
+		case RELOAD_TYPE_SHADERS: return shaders.reload();
 
 		case RELOAD_TYPE_SPELLS: {
 			if (!g_spells->reload()) {
@@ -5032,6 +5072,7 @@ bool Game::reload(ReloadTypes_t reloadType)
 			raids.reload() && raids.startup();
 			Item::items.reload();
 			quests.reload();
+			shaders.reload();
 			g_config.reload();
 			g_events->load();
 			g_chat->load();
@@ -5061,6 +5102,7 @@ bool Game::reload(ReloadTypes_t reloadType)
 			g_weapons->clear(true);
 			g_weapons->loadDefaults();
 			quests.reload();
+			shaders.reload();
 			g_globalEvents->reload();
 			g_events->load();
 			g_chat->load();

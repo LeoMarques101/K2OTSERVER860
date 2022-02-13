@@ -34,6 +34,7 @@
 #include "guild.h"
 #include "groups.h"
 #include "town.h"
+#include "shaders.h"
 
 #include <bitset>
 
@@ -139,6 +140,14 @@ class Player final : public Creature, public Cylinder
 		CreatureType_t getType() const override {
 			return CREATURETYPE_PLAYER;
 		}
+
+		bool hasShader() const
+		{
+			return !defaultOutfit.lookShader.empty();
+			//return defaultOutfit.lookShader != 0;
+		}
+
+		bool hasShader(const Shader* shader) const;
 
 		void sendFYIBox(const std::string& message) {
 			if (client) {

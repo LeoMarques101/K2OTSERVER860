@@ -218,6 +218,14 @@ bool Npc::loadFromXml()
 			defaultOutfit.lookTypeEx = pugi::cast<uint16_t>(attr.value());
 		}
 
+
+		if ((attr = lookNode.attribute("shader"))) {
+			defaultOutfit.lookShader = attr.as_string();
+			//Shader* shader = g_game.shaders.getShaderByName(attr.as_string());
+			//defaultOutfit.lookShader = shader ? shader->id : 0;
+		}
+
+
 		currentOutfit = defaultOutfit;
 	}
 

@@ -53,7 +53,10 @@ local reloadTypes = {
 	["weapons"] = RELOAD_TYPE_WEAPONS,
 
 	["scripts"] = RELOAD_TYPE_SCRIPTS,
-	["libs"] = RELOAD_TYPE_GLOBAL
+	["libs"] = RELOAD_TYPE_GLOBAL,
+
+	["shader"] = RELOAD_TYPE_SHADERS,
+	["shaders"] = RELOAD_TYPE_SHADERS
 }
 
 function onSay(player, words, param)

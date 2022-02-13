@@ -4365,6 +4365,28 @@ void Player::clearModalWindows()
 }
 */
 
+bool Player::hasShader(const Shader* shader) const
+{
+	if (isAccessPlayer()) {
+		return true;
+	}
+
+	if (shader->premium && !isPremium()) {
+		return false;
+	}
+
+	const uint8_t tmpShaderId = shader->id - 1;
+
+	int32_t value;
+	if (!getStorageValue(PSTRG_SHADERS_RANGE_START + (tmpShaderId / 31), value)) {
+		return false;
+	}
+
+	return ((1 << (tmpShaderId % 31)) & value) != 0;
+}
+
+
+
 uint16_t Player::getHelpers() const
 {
 	uint16_t helpers;
