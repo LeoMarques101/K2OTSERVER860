@@ -23,7 +23,7 @@ on:
 jobs:
   unix:
     name: ${{ matrix.os }}-${{ matrix.cxx }}-${{ matrix.buildtype }}-luajit=${{ matrix.luajit }}
-    runs-on: ${{ matrix.os }}-latest
+    runs-on: self-hosted
     strategy:
       fail-fast: false
       max-parallel: 8
