@@ -257,16 +257,6 @@
 		<npc name="K2 Guard_DIREITA" x="0" y="-2" z="7" spawntime="60" direction="1" />
 		<npc name="K2 Guard_DIREITA" x="0" y="2" z="7" spawntime="60" direction="1" />
 	</spawn>
-	<spawn centerx="1180" centery="724" centerz="7" radius="5">
-		<monster name="Rotworm" x="-5" y="-3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="0" y="-3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="5" y="-3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-5" y="0" z="7" spawntime="1" />
-		<monster name="Rotworm" x="5" y="0" z="7" spawntime="1" />
-		<monster name="Rotworm" x="-5" y="3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="0" y="3" z="7" spawntime="1" />
-		<monster name="Rotworm" x="5" y="3" z="7" spawntime="1" />
-	</spawn>
 	<spawn centerx="1081" centery="730" centerz="7" radius="5">
 		<monster name="Chicken" x="-4" y="-5" z="7" spawntime="60" />
 		<monster name="Chicken" x="3" y="-5" z="7" spawntime="60" />
@@ -276,7 +266,6 @@
 		<monster name="Chicken" x="-1" y="-1" z="7" spawntime="60" />
 		<monster name="Chicken" x="4" y="-1" z="7" spawntime="60" />
 		<monster name="Chicken" x="-4" y="0" z="7" spawntime="60" />
-		<monster name="Orshabaal" x="3" y="0" z="7" spawntime="60" />
 		<monster name="Chicken" x="1" y="1" z="7" spawntime="60" />
 		<monster name="Chicken" x="-1" y="3" z="7" spawntime="60" />
 		<monster name="Chicken" x="-4" y="4" z="7" spawntime="60" />
@@ -288,133 +277,6 @@
 		<npc name="Mage Shop" x="4" y="0" z="7" spawntime="60" direction="3" />
 		<npc name="Armo Shop" x="-3" y="6" z="7" spawntime="60" direction="1" />
 		<npc name="Paladin Shop" x="4" y="6" z="7" spawntime="60" direction="3" />
-	</spawn>
-	<spawn centerx="1096" centery="739" centerz="7" radius="5">
-		<monster name="Goblin Assassin" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="-3" y="1" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="0" y="1" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1089" centery="747" centerz="7" radius="5">
-		<monster name="Goblin Scavenger" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="0" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="3" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1079" centery="755" centerz="7" radius="5">
-		<monster name="Goblin Scavenger" x="4" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="3" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="0" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="-1" y="2" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1088" centery="762" centerz="7" radius="5">
-		<monster name="Goblin" x="-2" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="2" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="3" z="7" spawntime="60" />
-		<monster name="Goblin" x="-3" y="5" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1063" centery="763" centerz="7" radius="5">
-		<monster name="Goblin" x="3" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-4" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="4" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1072" centery="768" centerz="7" radius="5">
-		<monster name="Goblin Scavenger" x="0" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="-1" y="0" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="0" y="2" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1053" centery="771" centerz="7" radius="5">
-		<monster name="Goblin" x="-1" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="2" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin" x="-3" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="-5" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="2" y="3" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="4" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1084" centery="771" centerz="7" radius="5">
-		<monster name="Goblin" x="-2" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-1" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-5" y="4" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1043" centery="778" centerz="7" radius="5">
-		<monster name="Goblin" x="0" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin" x="-4" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="4" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="1" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="5" y="3" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="-1" y="4" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="4" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1082" centery="779" centerz="7" radius="5">
-		<monster name="Goblin" x="-1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="-3" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-5" y="4" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1064" centery="784" centerz="7" radius="5">
-		<monster name="Goblin" x="3" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="4" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin" x="-4" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="3" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-3" y="4" z="7" spawntime="60" />
-		<monster name="Goblin" x="2" y="5" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1054" centery="790" centerz="7" radius="5">
-		<monster name="Goblin Scavenger" x="0" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="2" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="1" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin" x="3" y="1" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1077" centery="790" centerz="7" radius="5">
-		<monster name="Goblin" x="-1" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin" x="3" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin" x="-3" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="2" y="-1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-4" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="1" z="7" spawntime="60" />
-		<monster name="Goblin" x="-3" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-4" y="3" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="3" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1064" centery="796" centerz="7" radius="5">
-		<monster name="Goblin Scavenger" x="-3" y="-5" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="3" y="-5" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin" x="-3" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="-1" y="-3" z="7" spawntime="60" />
-		<monster name="Goblin Scavenger" x="2" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="3" y="0" z="7" spawntime="60" />
-		<monster name="Goblin" x="0" y="2" z="7" spawntime="60" />
-	</spawn>
-	<spawn centerx="1084" centery="803" centerz="7" radius="5">
-		<monster name="Goblin Assassin" x="-2" y="-4" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="0" y="-2" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="-4" y="1" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="2" y="1" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="-1" y="2" z="7" spawntime="60" />
-		<monster name="Goblin" x="-2" y="3" z="7" spawntime="60" />
-		<monster name="Goblin" x="1" y="3" z="7" spawntime="60" />
-		<monster name="Goblin Assassin" x="3" y="4" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1078" centery="499" centerz="8" radius="20">
 		<monster name="Dragon Lord" x="7" y="7" z="8" spawntime="60" />
