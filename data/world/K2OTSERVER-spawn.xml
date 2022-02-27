@@ -645,7 +645,6 @@
 		<monster name="Rotworm" x="-6" y="-1" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-1" y="0" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-7" y="1" z="8" spawntime="60" />
-		<monster name="Rotworm Queen" x="2" y="1" z="8" spawntime="1000" />
 		<monster name="Carrion Worm" x="0" y="2" z="8" spawntime="60" />
 		<monster name="Rotworm" x="-10" y="4" z="8" spawntime="60" />
 		<monster name="Rotworm" x="0" y="4" z="8" spawntime="60" />
