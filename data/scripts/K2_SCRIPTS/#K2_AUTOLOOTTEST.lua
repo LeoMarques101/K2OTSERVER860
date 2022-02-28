@@ -122,13 +122,14 @@ end
 
 ec:register(3)
 
-local talkAction = TalkAction(autoloot.talkaction)
+local autoloottest = TalkAction(autoloot.talkaction)
 
-function talkAction.onSay(player, words, param, type)
+function autoloottest.onSay(player, words, param, type)
     local split = param:splitTrimmed(",")
     local action = split[1]
+    player:sendCancelMessage("teste")
     if not action then
-        player:showTextDialog(2160, string.format("Examples of use:\n%s add,gold coin\n%s remove,gold coin\n%s clear\n%s show\n%s edit\n\n~Available slots~\nfreeAccount: %d\npremiumAccount: %d\ncurrency to bank: %s", words, words, words, words, words, autoloot.freeAccountLimit, autoloot.premiumAccountLimit, autoloot.currencyToBank and "yes" or "no"), false)
+        player:showTextDialog(2160, string.format("Examples of use:\n%s add,gold coin\n%s remove,gold coin\n%s clear\n%s show\n%s edit\n\n~Available slots~\nfreeAccount: %d\npremiumAccount: %d\ncurrency to bank: %s", words, words, words, words, words, autoloot.freeAccountLimit, autoloot.premiumAccountLimit, autoloot.currencyToBank and "yes" or "no"))
         return false
     end
 
@@ -203,8 +204,8 @@ function talkAction.onSay(player, words, param, type)
     return false
 end
 
-talkAction:separator(" ")
-talkAction:register()
+autoloottest:separator(" ")
+autoloottest:register()
 
 local creatureEvent = CreatureEvent("autolootCleanCache")
 
