@@ -1,0 +1,8 @@
+--executar o script de reboot, salvar o log em my_script.log , e continuar rodando depois que sair (& no final)
+./reboot_script >> my_script.log 2>&1 &
+
+--ver o log em execução
+tail -f my_script.log
+
+
+ctrl+D para sair do terminal ssh
