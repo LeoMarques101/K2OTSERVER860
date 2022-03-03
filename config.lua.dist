@@ -20,7 +20,7 @@ pzLockSkullAttacker = false
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 -- NOTE: allowWalkthrough is only applicable to players
-ip = "127.0.0.1"
+ip = "MUDAR"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -69,9 +69,9 @@ maxMarketOffersAtATimePerPlayer = 100
 
 -- MySQL
 mysqlHost = "127.0.0.1"
-mysqlUser = "forgottenserver"
-mysqlPass = ""
-mysqlDatabase = "forgottenserver"
+mysqlUser = "MUDAR"
+mysqlPass = "MUDAR"
+mysqlDatabase = "MUDAR"
 mysqlPort = 3306
 mysqlSock = ""
 
@@ -142,9 +142,9 @@ experienceStages = {
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages above
 rateExp = 5
-rateSkill = 3
+rateSkill = 50
 rateLoot = 2
-rateMagic = 3
+rateMagic = 15
 rateSpawn = 1
 
 -- Monster Despawn Config
