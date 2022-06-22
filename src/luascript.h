@@ -1006,6 +1006,14 @@ class LuaScriptInterface
 		static int luaPlayerGetAutoLootItem(lua_State* L);
 		static int luaPlayerGetAutoLootList(lua_State* L);
 
+
+		//shaders
+		static int luaPlayerAddShader(lua_State* L);
+		static int luaPlayerRemoveShader(lua_State* L);
+		static int luaPlayerHasShader(lua_State* L);
+
+
+
 		// Monster
 		static int luaMonsterCreate(lua_State* L);
 

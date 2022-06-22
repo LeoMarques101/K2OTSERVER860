@@ -140,11 +140,12 @@ class Player final : public Creature, public Cylinder
 		CreatureType_t getType() const override {
 			return CREATURETYPE_PLAYER;
 		}
-
+		bool addShader(uint16_t shaderId);
+		bool removeShader(uint16_t shaderId);
 		bool hasShader() const
 		{
-			return !defaultOutfit.lookShader.empty();
-			//return defaultOutfit.lookShader != 0;
+			//return !defaultOutfit.lookShader.empty();
+			return defaultOutfit.lookShader != 0;
 		}
 
 		bool hasShader(const Shader* shader) const;

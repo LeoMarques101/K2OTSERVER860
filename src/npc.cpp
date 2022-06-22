@@ -220,9 +220,9 @@ bool Npc::loadFromXml()
 
 
 		if ((attr = lookNode.attribute("shader"))) {
-			defaultOutfit.lookShader = attr.as_string();
-			//Shader* shader = g_game.shaders.getShaderByName(attr.as_string());
-			//defaultOutfit.lookShader = shader ? shader->id : 0;
+			//defaultOutfit.lookShader = attr.as_string();
+			Shader* shader = g_game.shaders.getShaderByName(attr.as_string());
+			defaultOutfit.lookShader = shader ? shader->id : 0;
 		}
 
 

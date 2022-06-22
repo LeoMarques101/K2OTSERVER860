@@ -40,6 +40,7 @@
 #include "talkaction.h"
 #include "weapons.h"
 #include "script.h"
+#include "shaders.h"
 
 #include <fmt/format.h>
 
@@ -3187,8 +3188,8 @@ void Game::playerRequestOutfit(uint32_t playerId)
 	player->sendOutfitWindow();
 }
 
-//nao sei para que serve
-void Game::playerToggleOutfitExtension(uint32_t playerId, int shader)
+//nao sei para que serve ", int shader"
+void Game::playerToggleOutfitExtension(uint32_t playerId)
 {
 	Player* player = getPlayerByID(playerId);
 	if (!player) {
@@ -3211,16 +3212,17 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 
 	const Outfit* playerOutfit = Outfits::getInstance().getOutfitByLookType(player->getSex(), outfit.lookType);
 	if (!playerOutfit) {
-		//outfit.lookShader = 0;
-		outfit.lookShader = "";
+		outfit.lookShader = 0;
+		//outfit.lookShader = "";
 	}
 
 
-	//if (outfit.lookShader) {
-	//	Shader* shader = shaders.getShaderByID(outfit.lookShader);
+	if (outfit.lookShader) {
+		Shader* shader = shaders.getShaderByID(outfit.lookShader);
 
-	if (!outfit.lookShader.empty()) {
-	Shader* shader = shaders.getShaderByName(outfit.lookShader);
+	//if (!outfit.lookShader.empty()) {
+	//Shader* shader = shaders.getShaderByName(outfit.lookShader);
+	
 		if (!shader) {
 			return;
 		}

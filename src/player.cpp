@@ -642,6 +642,8 @@ void Player::addStorageValue(const uint32_t key, const int32_t value, const bool
 				value & 0xFF
 			);
 			return;
+		} else if (IS_IN_KEYRANGE(key, SHADERS_RANGE)) {
+			// do nothing
 		} else {
 			std::cout << "Warning: unknown reserved key: " << key << " player: " << getName() << std::endl;
 			return;
@@ -4365,6 +4367,67 @@ void Player::clearModalWindows()
 }
 */
 
+//COPIEI AS FUNÇÕES DE ADD MOUNT.
+bool Player::addShader(uint16_t shaderId)
+{
+	if (!g_game.shaders.getShaderByID(shaderId)) {
+		return false;
+	}
+
+	const uint8_t tmpShaderId = shaderId - 1;
+	const uint32_t key = PSTRG_SHADERS_RANGE_START + (tmpShaderId / 31);
+
+	int32_t value;
+	if (getStorageValue(key, value)) {
+		value |= (1 << (tmpShaderId % 31));
+	} else {
+		value = (1 << (tmpShaderId % 31));
+	}
+
+	addStorageValue(key, value);
+	/*
+	std::cout << "shaderId: " << shaderId << std::endl;
+	std::cout << "tmpShaderId: " << tmpShaderId << std::endl;
+	std::cout << "tmpShaderId / 31: " << (tmpShaderId / 31) << std::endl;
+	std::cout << "key: " << key << std::endl;
+	std::cout << "value: " << value << std::endl;
+	std::cout << "======" << std::endl;
+	*/
+	return true;
+}
+
+bool Player::removeShader(uint16_t shaderId)
+{
+	if (!g_game.shaders.getShaderByID(shaderId)) {
+		return false;
+	}
+
+	const uint8_t tmpShaderId = shaderId - 1;
+	const uint32_t key = PSTRG_SHADERS_RANGE_START + (tmpShaderId / 31);
+
+	int32_t value;
+	if (!getStorageValue(key, value)) {
+		return true;
+	}
+
+	value &= ~(1 << (tmpShaderId % 31));
+	addStorageValue(key, value);
+
+	/* TRABALHAR NESTE PONTO
+	if (getCurrentMount() == mountId) {
+		if (isMounted()) {
+			dismount();
+			g_game.internalCreatureChangeOutfit(this, defaultOutfit);
+		}
+
+		setCurrentMount(0);
+	}
+	*/
+
+	return true;
+}
+
+
 bool Player::hasShader(const Shader* shader) const
 {
 	if (isAccessPlayer()) {
@@ -4376,9 +4439,10 @@ bool Player::hasShader(const Shader* shader) const
 	}
 
 	const uint8_t tmpShaderId = shader->id - 1;
+	const uint32_t key = PSTRG_SHADERS_RANGE_START + (tmpShaderId / 31);
 
 	int32_t value;
-	if (!getStorageValue(PSTRG_SHADERS_RANGE_START + (tmpShaderId / 31), value)) {
+	if (!getStorageValue(key, value)) {
 		return false;
 	}
 

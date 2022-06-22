@@ -22,7 +22,7 @@ bool Shaders::loadFromXml()
 
 	for (auto shaderNode : doc.child("shaders").children()) {
 		shaders.emplace_back(
-			static_cast<uint16_t>(pugi::cast<uint16_t>(shaderNode.attribute("id").value())),
+			static_cast<uint8_t>(pugi::cast<uint16_t>(shaderNode.attribute("id").value())),
 			shaderNode.attribute("name").as_string(),
 			shaderNode.attribute("premium").as_bool()
 		);
@@ -31,7 +31,7 @@ bool Shaders::loadFromXml()
 	return true;
 }
 
-Shader* Shaders::getShaderByID(uint16_t id)
+Shader* Shaders::getShaderByID(uint8_t id)
 {
 	auto it = std::find_if(shaders.begin(), shaders.end(), [id](const Shader& shader) {
 		return shader.id == id;

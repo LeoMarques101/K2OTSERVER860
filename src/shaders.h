@@ -6,8 +6,8 @@ struct Shader
 	Shader(uint8_t id, std::string name, bool premium) :
 		name(std::move(name)), id(id), premium(premium) {}
 
-	uint8_t id;
 	std::string name;
+	uint8_t id;
 	bool premium;
 };
 
@@ -16,7 +16,7 @@ class Shaders
 	public:
 		bool reload();
 		bool loadFromXml();
-		Shader* getShaderByID(uint16_t id);
+		Shader* getShaderByID(uint8_t id);
 		Shader* getShaderByName(const std::string& name);
 
 		const std::vector<Shader>& getShaders() const {

@@ -405,7 +405,7 @@ class Game
 		void playerLeaveParty(uint32_t playerId);
 		void playerEnableSharedPartyExperience(uint32_t playerId, bool sharedExpActive);
 		//nao sei para que serve
-		void playerToggleOutfitExtension(uint32_t playerId, int shader);
+		void playerToggleOutfitExtension(uint32_t playerId);
 
 		void parsePlayerExtendedOpcode(uint32_t playerId, uint8_t opcode, const std::string& buffer);
 

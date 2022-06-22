@@ -1014,9 +1014,11 @@ MonsterType* Monsters::loadMonster(const std::string& file, const std::string& m
 		}
 
 		if ((attr = node.attribute("shader"))) {
-			mType->info.outfit.lookShader = attr.as_string();
+			//mType->info.outfit.lookShader = attr.as_string();
+			//nao funciona assim
 			//Shader* shader = g_game.shaders.getShaderByName(attr.as_string());
 			//mType->info.outfit.lookShader = shader ? shader->id : 0;
+			mType->info.outfit.lookShader = pugi::cast<int16_t>(attr.value());
 		}
 
 		if ((attr = node.attribute("corpse"))) {

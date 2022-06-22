@@ -43,6 +43,7 @@
 #include "globalevent.h"
 #include "script.h"
 #include "weapons.h"
+#include "shaders.h"
 
 extern Chat* g_chat;
 extern Game g_game;
@@ -58,6 +59,7 @@ extern MoveEvents* g_moveEvents;
 extern GlobalEvents* g_globalEvents;
 extern Scripts* g_scripts;
 extern Weapons* g_weapons;
+extern Shaders* g_shaders;
 
 ScriptEnvironment::DBResultMap ScriptEnvironment::tempResults;
 uint32_t ScriptEnvironment::lastResultId = 0;
@@ -783,8 +785,8 @@ Outfit_t LuaScriptInterface::getOutfit(lua_State* L, int32_t arg)
 
 	outfit.lookTypeEx = getField<uint16_t>(L, arg, "lookTypeEx");
 	outfit.lookType = getField<uint16_t>(L, arg, "lookType");
-	//outfit.lookShader = getField<uint16_t>(L, arg, "lookShader");
-	outfit.lookShader = getFieldString(L, arg, "lookShader");
+	outfit.lookShader = getField<uint8_t>(L, arg, "lookShader");
+	//outfit.lookShader = getFieldString(L, arg, "lookShader");
 
 	lua_pop(L, 8);
 	return outfit;
@@ -2465,6 +2467,10 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "removeAutoLootItem", LuaScriptInterface::luaPlayerRemoveAutoLootItem);
 	registerMethod("Player", "getAutoLootItem", LuaScriptInterface::luaPlayerGetAutoLootItem);
 	registerMethod("Player", "getAutoLootList", LuaScriptInterface::luaPlayerGetAutoLootList);
+
+	registerMethod("Player", "addShader", LuaScriptInterface::luaPlayerAddShader);
+	registerMethod("Player", "removeShader", LuaScriptInterface::luaPlayerRemoveShader);
+	registerMethod("Player", "hasShader", LuaScriptInterface::luaPlayerHasShader);
 
 	// Monster
 	registerClass("Monster", "Creature", LuaScriptInterface::luaMonsterCreate);
@@ -9911,6 +9917,77 @@ int LuaScriptInterface::luaPlayerGetAutoLootList(lua_State* L)
 	return 1;
 }
 
+//shader baseado nas mounts
+int LuaScriptInterface::luaPlayerAddShader(lua_State* L) {
+	// player:addShader(shaderId or shaderName)
+	Player* player = getUserdata<Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	uint8_t shaderId;
+	if (isNumber(L, 2)) {
+		shaderId = getNumber<uint8_t>(L, 2);
+	} else {
+		Shader* shader = g_game.shaders.getShaderByName(getString(L, 2));
+		if (!shader) {
+			lua_pushnil(L);
+			return 1;
+		}
+		shaderId = shader->id;
+	}
+	pushBoolean(L, player->addShader(shaderId));
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerRemoveShader(lua_State* L) {
+	// player:removeShader(shaderId or shaderName)
+	Player* player = getUserdata<Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	uint8_t shaderId;
+	if (isNumber(L, 2)) {
+		shaderId = getNumber<uint8_t>(L, 2);
+	} else {
+		Shader* shader = g_game.shaders.getShaderByName(getString(L, 2));
+		if (!shader) {
+			lua_pushnil(L);
+			return 1;
+		}
+		shaderId = shader->id;
+	}
+	pushBoolean(L, player->removeShader(shaderId));
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerHasShader(lua_State* L) {
+	// player:hasShader(shaderId or shaderName)
+	const Player* player = getUserdata<const Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	Shader* shader = nullptr;
+	if (isNumber(L, 2)) {
+		shader = g_game.shaders.getShaderByID(getNumber<uint8_t>(L, 2));
+	} else {
+		shader = g_game.shaders.getShaderByName(getString(L, 2));
+	}
+
+	if (shader) {
+		pushBoolean(L, player->hasShader(shader));
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+
 
 // Monster
 int LuaScriptInterface::luaMonsterCreate(lua_State* L)
@@ -12634,8 +12711,8 @@ int LuaScriptInterface::luaConditionSetOutfit(lua_State* L)
 	if (isTable(L, 2)) {
 		outfit = getOutfit(L, 2);
 	} else {
-		//outfit.lookShader = getNumber<uint16_t>(L, 12, outfit.lookShader);
-		outfit.lookShader = getString(L, 12);
+		outfit.lookShader = getNumber<uint8_t>(L, 12, outfit.lookShader);
+		//outfit.lookShader = getString(L, 12);
 		outfit.lookAddons = getNumber<uint8_t>(L, 8, outfit.lookAddons);
 		outfit.lookFeet = getNumber<uint8_t>(L, 7);
 		outfit.lookLegs = getNumber<uint8_t>(L, 6);
