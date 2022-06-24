@@ -2148,10 +2148,10 @@ void ProtocolGame::sendOutfitWindow()
 		currentOutfit = newOutfit;
 	}
 
-	/*Mount* currentMount = g_game.mounts.getMountByID(player->getCurrentMount());
-	if (currentMount) {
-		currentOutfit.lookMount = currentMount->clientId;
-	}*/
+	Shader* currentShader = g_game.shaders.getShaderByID(player->getCurrentShader());
+	if (currentShader) {
+		currentOutfit.lookShader = currentShader->id;
+	}
 
 	AddOutfit(msg, currentOutfit);
 

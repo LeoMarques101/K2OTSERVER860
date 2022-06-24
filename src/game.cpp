@@ -3217,7 +3217,7 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 	}
 
 
-	if (outfit.lookShader) {
+	if (outfit.lookShader != 0) {
 		Shader* shader = shaders.getShaderByID(outfit.lookShader);
 
 	//if (!outfit.lookShader.empty()) {
@@ -3230,7 +3230,10 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 		if (!player->hasShader(shader)) {
 			return;
 		}
+
+		player->setCurrentShader(shader->id);
 	}
+
 
 
 	if (player->canWear(outfit.lookType, outfit.lookAddons)) {

@@ -4368,7 +4368,19 @@ void Player::clearModalWindows()
 */
 
 //COPIEI AS FUNÇÕES DE ADD MOUNT.
-bool Player::addShader(uint16_t shaderId)
+
+uint8_t Player::getCurrentShader() const
+{
+	int32_t value;
+	if (getStorageValue(PSTRG_SHADERS_CURRENTSHADER, value)) {
+		return value;
+	}
+	return 0;
+}
+
+void Player::setCurrentShader(uint8_t shaderId) { addStorageValue(PSTRG_SHADERS_CURRENTSHADER, shaderId); }
+
+bool Player::addShader(uint8_t shaderId)
 {
 	if (!g_game.shaders.getShaderByID(shaderId)) {
 		return false;
@@ -4396,7 +4408,7 @@ bool Player::addShader(uint16_t shaderId)
 	return true;
 }
 
-bool Player::removeShader(uint16_t shaderId)
+bool Player::removeShader(uint8_t shaderId)
 {
 	if (!g_game.shaders.getShaderByID(shaderId)) {
 		return false;
@@ -4413,16 +4425,12 @@ bool Player::removeShader(uint16_t shaderId)
 	value &= ~(1 << (tmpShaderId % 31));
 	addStorageValue(key, value);
 
-	/* TRABALHAR NESTE PONTO
-	if (getCurrentMount() == mountId) {
-		if (isMounted()) {
-			dismount();
-			g_game.internalCreatureChangeOutfit(this, defaultOutfit);
-		}
-
-		setCurrentMount(0);
+	// TRABALHAR NESTE PONTO
+	if (getCurrentShader() == shaderId) {
+		setCurrentShader(0);
+		defaultOutfit.lookShader = 0;
+		g_game.internalCreatureChangeOutfit(this, defaultOutfit);
 	}
-	*/
 
 	return true;
 }
