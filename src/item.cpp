@@ -854,7 +854,9 @@ uint32_t Item::getWeight() const
 
 std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
                                  const Item* item /*= nullptr*/, int32_t subType /*= -1*/, bool addArticle /*= true*/)
-{for (uint8_t i = SPECIALSKILL_FIRST; i <= SPECIALSKILL_LAST; i++) {
+{
+	/* error: ‘begin’ was not declared in this scope
+	for (uint8_t i = SPECIALSKILL_FIRST; i <= SPECIALSKILL_LAST; i++) {
                 if (!it.abilities->specialSkills[i]) {
                     continue;
                 }
@@ -868,6 +870,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 
                 s << getSpecialSkillName(i) << ' ' << std::showpos << it.abilities->specialSkills[i] << '%' << std::noshowpos;
             }
+		*/
 	const std::string* text = nullptr;
 
 	std::ostringstream s;

@@ -1,8 +1,48 @@
+############## APACHE E MYSQL
+sudo apt install apache2
+sudo apt install php php-json php-mbstring php-zip php-gd php-xml php-curl php-mysql
+
+
+sudo apt install mariadb-server
+sudo mysql_secure_installation
+
+sudo systemctl status mariadb //checar status
+sudo systemctl start mariadb  //iniciar server sql
+
+//CRIAR O USER
+sudo mysql -u root
+CREATE USER 'user'@localhost IDENTIFIED BY 'senha';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@localhost IDENTIFIED BY 'senha';
+FLUSH PRIVILEGES;
+
+//https://phoenixnap.com/kb/how-to-install-phpmyadmin-on-debian-10
+sudo apt install phpmyadmin
+
+colocar no final: "Include /etc/phpmyadmin/apache.conf"
+sudo nano /etc/apache2/apache2.conf
+sudo service apache2 reload
+
+criar a base para o otserver manualmente pelo phpmyadmin
+
+############## Site
+cd /var/www/html
+sudo rm index.html  //remover o html que vem com o apache 2
+sudo git clone https://github.com/LeoMarques101/k2ot_site.git .
+sudo chmod 660 config.php && sudo chmod 660 images/guilds && sudo chmod 660 images/houses && sudo chmod 660 images/gallery && sudo chmod -R 770 system/cache
+
+############## compilar o otserver debian
+sudo apt-get install git cmake build-essential libluajit-5.1-dev libmariadb-dev-compat libboost-date-time-dev libboost-filesystem-dev libboost-system-dev libboost-iostreams-dev libpugixml-dev libcrypto++-dev libfmt-dev
+cd k2
+sudo mkdir build && cd build
+sudo cmake ..
+sudo make
+
+
+############## EXECUTAR O OT
 --executar o script de reboot, salvar o log em my_script.log , e continuar rodando depois que sair (& no final)
 ./reboot_script >> my_script.log 2>&1 &
 
 --ver o log em execução
 tail -f my_script.log
-
 
 ctrl+D para sair do terminal ssh
