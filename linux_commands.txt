@@ -30,6 +30,12 @@ sudo rm index.html  //remover o html que vem com o apache 2
 sudo git clone https://github.com/LeoMarques101/k2ot_site.git .
 sudo chmod 660 config.php && sudo chmod 660 images/guilds && sudo chmod 660 images/houses && sudo chmod 660 images/gallery && sudo chmod -R 770 system/cache
 
+
+############## no-ip
+https://www.noip.com/support/knowledgebase/installing-the-linux-dynamic-update-client/
+
+
+
 ############## compilar o otserver debian
 sudo apt-get install git cmake build-essential libluajit-5.1-dev libmariadb-dev-compat libboost-date-time-dev libboost-filesystem-dev libboost-system-dev libboost-iostreams-dev libpugixml-dev libcrypto++-dev libfmt-dev
 cd k2

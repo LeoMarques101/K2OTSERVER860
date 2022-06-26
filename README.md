@@ -5,3 +5,25 @@ This downgrade is up to Dec 21, 2021, commit: https://github.com/otland/forgotte
 ## How to compile
 
 [Wiki](https://github.com/otland/forgottenserver/wiki/Compiling)
+
+---
+
+## TODO
+
+##### Data:
+- [ ] Hunts
+- [ ] Npcs
+- [ ] Task system
+- [ ] Monsters lua
+- [ ] Boses
+- [ ] Quests
+- [ ] Itens vip
+
+##### Server:
+- [ ] Cast system
+  
+##### Client:
+- [ ] Itens lib
+- [ ] Monsters lib
+- [ ] 
+
