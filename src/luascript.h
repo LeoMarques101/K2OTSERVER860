@@ -511,6 +511,7 @@ class LuaScriptInterface
 		static int luaSendGuildChannelMessage(lua_State* L);
 
 		static int luaIsScriptsInterface(lua_State* L);
+		static int luaHasBitSet(lua_State* L);
 
 #ifndef LUAJIT_VERSION
 		static int luaBitNot(lua_State* L);

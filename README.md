@@ -18,6 +18,8 @@ This downgrade is up to Dec 21, 2021, commit: https://github.com/otland/forgotte
 - [ ] Boses
 - [ ] Quests
 - [ ] Itens vip
+- [ ] Tutorial
+- [ ] Itens Upgrade
 
 ##### Server:
 - [ ] Cast system
