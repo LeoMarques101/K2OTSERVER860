@@ -1254,6 +1254,18 @@ void Player::onCreatureMove(Creature* creature, const Tile* newTile, const Posit
 		}
 	}
 
+	// close modal windows
+	if (!modalWindows.empty()) {
+		// TODO: This shouldn't be hard-coded
+		for (uint32_t modalWindowId : modalWindows) {
+			if (modalWindowId == std::numeric_limits<uint32_t>::max()) {
+				sendTextMessage(MESSAGE_EVENT_ADVANCE, "Offline training aborted.");
+				break;
+			}
+		}
+		modalWindows.clear();
+	}
+
 	if (party) {
 		party->updateSharedExperience();
 	}
@@ -4341,6 +4353,8 @@ bool Player::addOfflineTrainingTries(skills_t skill, uint64_t tries)
 	return sendUpdate;
 }
 
+*/
+
 bool Player::hasModalWindowOpen(uint32_t modalWindowId) const
 {
 	return find(modalWindows.begin(), modalWindows.end(), modalWindowId) != modalWindows.end();
@@ -4365,7 +4379,7 @@ void Player::clearModalWindows()
 {
 	modalWindows.clear();
 }
-*/
+
 
 //COPIEI AS FUNÇÕES DE ADD MOUNT.
 

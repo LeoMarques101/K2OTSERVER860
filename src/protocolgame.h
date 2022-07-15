@@ -131,6 +131,8 @@ class ProtocolGame final : public Protocol
 		void parsePassPartyLeadership(NetworkMessage& msg);
 		void parseEnableSharedPartyExperience(NetworkMessage& msg);
 
+		void parseModalWindowAnswer(NetworkMessage& msg);
+
 		//trade methods
 		void parseRequestTrade(NetworkMessage& msg);
 		void parseLookInTrade(NetworkMessage& msg);
@@ -233,6 +235,10 @@ class ProtocolGame final : public Protocol
 
 		//inventory
 		void sendInventoryItem(slots_t slot, const Item* item);
+
+		//messages
+		void sendModalWindow(const ModalWindow& modalWindow);
+
 
 		//Help functions
 

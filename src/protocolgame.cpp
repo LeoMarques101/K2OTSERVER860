@@ -286,6 +286,7 @@ void ProtocolGame::connect(uint32_t playerId, OperatingSystem_t operatingSystem)
 	player->incrementReferenceCounter();
 
 	g_chat->removeUserFromAllChannels(*player);
+	player->clearModalWindows();
 	player->setOperatingSystem(operatingSystem);
 	player->isConnecting = false;
 
@@ -568,6 +569,7 @@ void ProtocolGame::parsePacket(NetworkMessage& msg)
 		case 0xF1: parseQuestLine(msg); break;
 		case 0xF2: parseRuleViolationReport(msg); break;
 		case 0xF3: /* get object info */ break;
+		case 0xF9: parseModalWindowAnswer(msg); break;
 
 		default:
 			// std::cout << "Player: " << player->getName() << " sent an unknown packet header: 0x" << std::hex << static_cast<uint16_t>(recvbyte) << std::dec << "!" << std::endl;
@@ -1127,6 +1129,14 @@ void ProtocolGame::parseQuestLine(NetworkMessage& msg)
 {
 	uint16_t questId = msg.get<uint16_t>();
 	addGameTask(&Game::playerShowQuestLine, player->getID(), questId);
+}
+
+void ProtocolGame::parseModalWindowAnswer(NetworkMessage& msg)
+{
+	uint32_t id = msg.get<uint32_t>();
+	uint8_t button = msg.getByte();
+	uint8_t choice = msg.getByte();
+	addGameTask(&Game::playerAnswerModalWindow, player->getID(), id, button, choice);
 }
 
 // Send methods
@@ -2262,6 +2272,35 @@ void ProtocolGame::sendAnimatedText(const std::string& message, const Position& 
 	msg.addString(message);
 	writeToOutputBuffer(msg);
 }
+
+void ProtocolGame::sendModalWindow(const ModalWindow& modalWindow)
+{
+	NetworkMessage msg;
+	msg.addByte(0xFA);
+
+	msg.add<uint32_t>(modalWindow.id);
+	msg.addString(modalWindow.title);
+	msg.addString(modalWindow.message);
+
+	msg.addByte(modalWindow.buttons.size());
+	for (const auto& it : modalWindow.buttons) {
+		msg.addString(it.first);
+		msg.addByte(it.second);
+	}
+
+	msg.addByte(modalWindow.choices.size());
+	for (const auto& it : modalWindow.choices) {
+		msg.addString(it.first);
+		msg.addByte(it.second);
+	}
+
+	msg.addByte(modalWindow.defaultEscapeButton);
+	msg.addByte(modalWindow.defaultEnterButton);
+	msg.addByte(modalWindow.priority ? 0x01 : 0x00);
+
+	writeToOutputBuffer(msg);
+}
+
 
 ////////////// Add common messages
 void ProtocolGame::AddCreature(NetworkMessage& msg, const Creature* creature, bool known, uint32_t remove)
