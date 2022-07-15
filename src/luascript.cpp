@@ -11472,21 +11472,31 @@ int LuaScriptInterface::luaHouseSave(lua_State* L)
 // ItemType
 int LuaScriptInterface::luaItemTypeCreate(lua_State* L)
 {
-	// ItemType(id or name)
+	// ItemType(id or name, clientID)
+	uint16_t clientID = getNumber<uint16_t>(L, 3);
 	uint32_t id;
-	if (isNumber(L, 2)) {
-		id = getNumber<uint32_t>(L, 2);
-	} else if (isString(L, 2)) {
-		id = Item::items.getItemIdByName(getString(L, 2));
+	if (clientID) {
+		//std::cout << "[Hello, World!]";
+		const ItemType& itemType = Item::items.getItemIdByClientId(clientID);
+		pushUserdata<const ItemType>(L, &itemType);
+		setMetatable(L, -1, "ItemType");
+		return 1;
+
 	} else {
-		lua_pushnil(L);
+		if (isNumber(L, 2)) {
+			id = getNumber<uint32_t>(L, 2);
+		} else if (isString(L, 2)) {
+			id = Item::items.getItemIdByName(getString(L, 2));
+		} else {
+			lua_pushnil(L);
+			return 1;
+		}
+		//std::cout << "[nao era pra rodar]";
+		const ItemType& itemType = Item::items[id];
+		pushUserdata<const ItemType>(L, &itemType);
+		setMetatable(L, -1, "ItemType");
 		return 1;
 	}
-
-	const ItemType& itemType = Item::items[id];
-	pushUserdata<const ItemType>(L, &itemType);
-	setMetatable(L, -1, "ItemType");
-	return 1;
 }
 
 int LuaScriptInterface::luaItemTypeIsCorpse(lua_State* L)
